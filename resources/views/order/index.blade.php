@@ -78,14 +78,14 @@
                             @endif
 
                             @if(session()->get('dept') == null || session()->get('dept') == 'Sales')
-                             <a href = '/order/monitor-status'> <btn class = 'btn btn-info' id = 'view'>View</btn> </a>
+                             <a href = '/order/monitor-status'> <btn class = 'btn btn-info' id = 'view'>Status</btn> </a>
                              <btn class = 'btn btn-danger' id = 'terminated'>Terminate</btn>
                             @elseif(session()->get('dept') == 'Production')
                               <a href = '/order/to-do'> <btn class = 'btn btn-warning' id = 'view'>Manage</btn> </a>
                             @endif
 
                               @if(session()->get('dept') == null)
-                                 <a href = '/order/schedule'> <btn class = 'btn btn-success' id = 'view'>View</btn> </a>
+                                 <a href = '/order/schedule'> <btn class = 'btn btn-success' id = 'view'>Delivery</btn> </a>
                               @elseif(session()->get('dept') == 'Sales')
                                 <a href = '/order/schedule'> <btn class = 'btn btn-success' id = 'view'>Schedule</btn> </a>
                             @endif

@@ -49,17 +49,16 @@
 											 				->join('agents', 'agents.id', '=', 'customers.agent_id')
   														->join('employees', 'employees.id', '=', 'agents.employee_id')
 														  ->join('users', 'users.id', '=', 'employees.user_id')
-														  ->select('users.first_name')
-														  ->where('customers.user_id', '=', session()->get('current'))
-														->value(1) }}
+															->where('customers.user_id', '=', session()->get('current'))
+														  ->value('users.first_name') }}
 
 														{{ DB::table('customers')
 													 				->join('agents', 'agents.id', '=', 'customers.agent_id')
 		  														->join('employees', 'employees.id', '=', 'agents.employee_id')
 																  ->join('users', 'users.id', '=', 'employees.user_id')
-																  ->select('users.last_name')
-																  ->where('customers.user_id', '=', session()->get('current'))
-																->value('users.last_name') }}
+																	->where('customers.user_id', '=', session()->get('current'))
+																	->value('users.last_name')
+																   }}
 											</th>
 										</tr>
 									</thead>
@@ -70,9 +69,9 @@
 														->join('agents', 'agents.id', '=', 'customers.agent_id')
 														->join('employees', 'employees.id', '=', 'agents.employee_id')
 														->join('users', 'users.id', '=', 'employees.user_id')
-														->select('users.contact')
 														->where('customers.user_id', '=', session()->get('current'))
-													->value('users.last_name') }}</td>
+														->value('users.contact')
+														}}</td>
 										</tr>
 
 										<tr>
@@ -80,9 +79,9 @@
 														->join('agents', 'agents.id', '=', 'customers.agent_id')
 														->join('employees', 'employees.id', '=', 'agents.employee_id')
 														->join('users', 'users.id', '=', 'employees.user_id')
-														->select('users.email')
 														->where('customers.user_id', '=', session()->get('current'))
-													->value('users.last_name') }}</td>
+														->value('users.email')
+														 }}</td>
 										</tr>
 									</tbody>
 							</table>
