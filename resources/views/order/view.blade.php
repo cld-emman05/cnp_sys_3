@@ -262,7 +262,7 @@
 					@if(session()->get('dept') == 'Production')
 	<div class="text-center">
 		<btn class = 'btn btn-primary' id = 'download'> Download File </btn>
-		<btn class = 'btn btn-warning' id = 'production'> Manage Order </btn>
+		<a href = '/order/to-do'> <btn class = 'btn btn-warning' id = 'production'> Manage Order </btn> </a>
 	</div>
 	@endif
 </form>

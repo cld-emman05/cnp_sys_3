@@ -17,12 +17,14 @@
           <div class = 'card card-body'>
             <div class="col-md-12 md-4">
 
+            @if(session()->get('dept') == null)
               <div class="col-md-12 md-4">
               <a href = '/order/create'>
                 <btn class = 'btn btn-primary' id = 'create'>
                 <i class="now-ui-icons ui-1_simple-add"></i> Create</btn>
               </a>
             </div>
+            @endif
 
 
                 <div class="card-chart">
